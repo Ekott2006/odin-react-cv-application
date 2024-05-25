@@ -2,9 +2,9 @@
 
 Project to create a CV Application Website using React and Typescript.
 
-From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/javascript-restaurant-page).
+From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/react-new-cv-application).
 
-🔗 **Live preview:** [here](https://ekott2006.github.io/odin-js-restaurant)
+🔗 **Live preview:** [here](https://odin-react-cv-application-blond.vercel.app/)
 
 ## Built with
 
