@@ -1,44 +1,8 @@
-# CV Application Website
+# React + Vite
 
-Project to create a CV Application Website using React and Typescript.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-From The Odin Project's [curriculum](https://www.theodinproject.com/lessons/react-new-cv-application).
+Currently, two official plugins are available:
 
-🔗 **Live preview:** [here](https://odin-react-cv-application-blond.vercel.app/)
-
-## Built with
-
-### Technologies
-
-- HTML
-- CSS
-- JS
-- React
-
-### Tools
-
-- Visual Studio Code
-- Git and GitHub
-
-## Outcome
-
-- Used **React** and **JSX** To build the UI
-- Use **Vite** for asset bundling
-- Used **Git** and **GitHub** for project management.
-- Styled with **Tailwind**
-- Type Safety with **Typescript**
-
-## Summary
-
-### What I learned
-
-- Knowledge of Vite
-- Better knowledge of React
-- Knowledge of tailwind css
-- A lot of minor things.
-
-## Author
-
-👤 **Ekott**
-
-- GitHub: [Ekott2006](https://github.com/Ekott2006)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

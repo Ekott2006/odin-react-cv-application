@@ -1,8 +1,6 @@
-import {FC} from "react";
-import {IGeneralInfo} from "../../interfaces.ts";
-import {H2Component} from "../HelperComponent.tsx";
+import {H2Component} from "../HelperComponent.jsx";
 
-const GeneralInfoViewComponent: FC<{ generalInfo: IGeneralInfo }> = ({generalInfo}) => (
+const GeneralInfoViewComponent = ({generalInfo}) => (
     <>
         <div>
             <h1 className="font-bold text-center text-4xl">{`${generalInfo.firstName} ${generalInfo.lastName}`}</h1>

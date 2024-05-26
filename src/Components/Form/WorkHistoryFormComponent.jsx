@@ -1,13 +1,8 @@
-import {AddEntryButtonComponent, H2Component, RemoveButtonComponent} from "../HelperComponent.tsx";
-import  {ChangeEvent, Dispatch, FC, SetStateAction} from "react";
-import {IWorkHistory} from "../../interfaces.ts";
-import {LabelInputComponent} from "../LabelInputComponent.tsx";
+import {AddEntryButtonComponent, H2Component, RemoveButtonComponent} from "../HelperComponent.jsx";
+import {LabelInputComponent} from "../LabelInputComponent.jsx";
 
-const WorkHistoryFormComponent: FC<{
-    workHistory: IWorkHistory[],
-    setWorkHistory: Dispatch<SetStateAction<IWorkHistory[]>>
-}> = ({workHistory, setWorkHistory}) => {
-    function handleWorkHistory(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, i: number, key: string) {
+const WorkHistoryFormComponent = ({workHistory, setWorkHistory}) => {
+    function handleWorkHistory(e, i, key) {
         const data = [...workHistory];
         console.log(e.target)
         // @ts-expect-error any error
@@ -16,7 +11,8 @@ const WorkHistoryFormComponent: FC<{
     }
 
     function addWorkHistory() {
-        const data: IWorkHistory[] = [...workHistory, {
+        const data = [...workHistory, {
+            id: workHistory.length,
             companyName: "",
             position: "",
             startDate: "",
@@ -25,7 +21,7 @@ const WorkHistoryFormComponent: FC<{
         }];
         setWorkHistory(data)
     }
-    const removeFields = (i: number) => {
+    const removeFields = (i) => {
         const data = [...workHistory];
         data.splice(i, 1)
         setWorkHistory(data)
@@ -34,7 +30,7 @@ const WorkHistoryFormComponent: FC<{
     return (<div>
             <H2Component title="Work History"/>
             {workHistory.map((x, i) => (
-                <div key={i}>
+                <div key={i} className={"grid gap-4 my-2"}>
                     <h3 className={"text-center font-bold text-lg"}>Work {i + 1}</h3>
 
                     <LabelInputComponent title="Position" value={x.position}

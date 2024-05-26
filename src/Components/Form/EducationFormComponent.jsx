@@ -1,21 +1,17 @@
-import {AddEntryButtonComponent, H2Component, RemoveButtonComponent} from "../HelperComponent.tsx";
-import React, {Dispatch, FC, SetStateAction} from "react";
-import {IEducation} from "../../interfaces.ts";
-import {LabelInputComponent} from "../LabelInputComponent.tsx";
+import {AddEntryButtonComponent, H2Component, RemoveButtonComponent} from "../HelperComponent.jsx";
+import {LabelInputComponent} from "../LabelInputComponent.jsx";
 
-const EducationFormComponent: FC<{
-    educationData: IEducation[],
-    setEducationData: Dispatch<SetStateAction<IEducation[]>>
-}> = ({educationData, setEducationData}) => {
+const EducationFormComponent = ({educationData, setEducationData}) => {
 
-    function handleEducation(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, i: number, key: keyof IEducation) {
+    function handleEducation(e, i, key) {
         const data = [...educationData];
         data[i][key] = e.target.value;
         setEducationData(data);
     }
 
     function addEducation() {
-        const data: IEducation[] = [...educationData, {
+        const data = [...educationData, {
+            id: educationData.length,
             endDate: "",
             schoolName: "",
             startDate: "",
@@ -23,7 +19,7 @@ const EducationFormComponent: FC<{
         }];
         setEducationData(data)
     }
-    const removeFields = (i: number) => {
+    const removeFields = (i) => {
         const data = [...educationData];
         data.splice(i, 1)
         setEducationData(data)
@@ -33,7 +29,7 @@ const EducationFormComponent: FC<{
         <>
             <H2Component title="Education"/>
             {educationData.map((x, i) => (
-                <div key={i}>
+                <div key={i} className={"grid gap-4"}>
                     <h3 className={"text-center font-bold text-lg"}>School {i + 1}</h3>
                     <LabelInputComponent title="School Name" value={x.schoolName}
                                          handleInput={e => handleEducation(e, i, "schoolName")}/>

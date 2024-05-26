@@ -1,9 +1,7 @@
-import {FC} from "react";
-import {IEducation} from "../../interfaces.ts";
-import {H2Component} from "../HelperComponent.tsx";
-import {formatDateMonthYear} from "../../HelperFunctions.ts";
+import {H2Component} from "../HelperComponent.jsx";
+import {formatDateMonthYear} from "../../HelperFunctions.js";
 
-const EducationViewComponent: FC<{ educations: IEducation[] }> = ({educations}) => {
+const EducationViewComponent = ({educations}) => {
     return (
         <>
             {educations.length > 0 && <hr className="border-black"/>}
@@ -11,7 +9,7 @@ const EducationViewComponent: FC<{ educations: IEducation[] }> = ({educations}) 
                 {educations.length > 0 && <H2Component title="Education"/>}
                 <ul className="list-disc px-6">
                     {educations.map((x) => (
-                        <li>
+                        <li key={x.id}>
                             <div className="flex justify-between ">
                                 <h3 className="font-bold text-xl">{x.schoolName}</h3>
                                 <p>

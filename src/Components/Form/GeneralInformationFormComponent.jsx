@@ -1,13 +1,8 @@
-import { Dispatch, FC, SetStateAction } from "react";
-import { H2Component } from "../HelperComponent.tsx";
-import { IGeneralInfo } from "../../interfaces.ts";
-import {LabelInputComponent} from "../LabelInputComponent.tsx";
+import { H2Component } from "../HelperComponent.jsx";
+import {LabelInputComponent} from "../LabelInputComponent.jsx";
 
-const GeneralInformationFormComponent: FC<{
-    generalInfo: IGeneralInfo;
-    setGeneralInfo: Dispatch<SetStateAction<IGeneralInfo>>;
-}> = ({ generalInfo, setGeneralInfo }) => {
-    const handleInputChange = (field: keyof IGeneralInfo, value: string) => {
+const GeneralInformationFormComponent = ({ generalInfo, setGeneralInfo }) => {
+    const handleInputChange = (field, value) => {
         setGeneralInfo((prevInfo) => ({ ...prevInfo, [field]: value }));
     };
 
@@ -15,7 +10,6 @@ const GeneralInformationFormComponent: FC<{
         <>
             <H2Component title="General Information" />
             <div className="flex flex-row w-full gap-8 flex-wrap sm:flex-nowrap ">
-
                 <LabelInputComponent
                     title="First Name"
                     value={generalInfo.firstName}
